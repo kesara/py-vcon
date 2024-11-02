@@ -76,6 +76,9 @@ jobs:
         DEEPGRAM_KEY: ${{  secrets.DEEPGRAM_KEY }}
         
       run: |
+        if [ -z "${{ secrets.OPENAI_API_KEY }}" ]; then
+          echo "::warning:: OPENAI_API_KEY is not set. Any OpenAI tests will be skipped."
+        fi
         # This test gets run by itself as it catches print/stdout that may only
         # occur upon the initial inport that can cause the CLI to fail due to
         # spurious output which can cause the JSON output to contain junk.
