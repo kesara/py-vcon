@@ -37,6 +37,7 @@ def test_1_options():
 
 
 @pytest.mark.asyncio
+@pytest.mark.skipif(not os.getenv("OPENAI_API_KEY"), reason="OPENAI_API_KEY environment variable is not set")
 async def test_2_completion_text_summary():
   """ Test OpenAICompletion FilterPlugin with transcribe ananlysis and text output """
   in_vcon = vcon.Vcon()
@@ -77,6 +78,7 @@ async def test_2_completion_text_summary():
 
 
 @pytest.mark.asyncio
+@pytest.mark.skipif(not os.getenv("OPENAI_API_KEY"), reason="OPENAI_API_KEY environment variable is not set")
 async def test_2a_completion_object_summary():
   """ Test OpenAICompletion FilterPlugin with transcribe ananlysis and completion_object output """
 
@@ -120,6 +122,7 @@ async def test_2a_completion_object_summary():
 
 
 @pytest.mark.asyncio
+@pytest.mark.skipif(not os.getenv("OPENAI_API_KEY"), reason="OPENAI_API_KEY environment variable is not set")
 async def test_2b_completion_object_summary():
   """ Test OpenAICompletion FilterPlugin with transcribe ananlysis and completion_object output """
 
@@ -167,6 +170,7 @@ async def test_2b_completion_object_summary():
 
 
 @pytest.mark.asyncio
+@pytest.mark.skipif(not os.getenv("OPENAI_API_KEY"), reason="OPENAI_API_KEY environment variable is not set")
 async def test_3_chat_completion_object_summary():
   """ Test OpenAIChatCompletion FilterPlugin with transcribe ananlysis and chat_completion_object output """
 
@@ -219,6 +223,7 @@ async def test_3_chat_completion_object_summary():
 
 
 @pytest.mark.asyncio
+@pytest.mark.skipif(not os.getenv("OPENAI_API_KEY"), reason="OPENAI_API_KEY environment variable is not set")
 async def test_4_diarized_chat_completion_object_summary():
   """ Test OpenAIChatCompletion FilterPlugin with transcribe ananlysis and chat_completion_object output """
 
@@ -272,6 +277,7 @@ async def test_4_diarized_chat_completion_object_summary():
 
 
 @pytest.mark.asyncio
+@pytest.mark.skipif(not os.getenv("OPENAI_API_KEY"), reason="OPENAI_API_KEY environment variable is not set")
 async def test_5_openai_triggers_transcribe():
   """ Test OpenAIChatCompletion FilterPlugin with missing transcribe ananlysis, should transcribe"""
 
